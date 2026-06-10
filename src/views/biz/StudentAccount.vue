@@ -20,16 +20,16 @@
         </div>
       </template>
       <el-table :data="tableData" border stripe v-loading="loading" @row-dblclick="openDialog">
-        <el-table-column prop="id" label="ID" width="60" />
-        <el-table-column prop="studentId" label="学生ID" width="80" />
-        <el-table-column prop="username" label="用户名" width="140" />
-        <el-table-column prop="status" label="状态" width="80">
+        <el-table-column show-overflow-tooltip prop="id" label="ID" width="60" />
+        <el-table-column show-overflow-tooltip prop="studentId" label="学生ID" min-width="90" />
+        <el-table-column show-overflow-tooltip prop="username" label="用户名" min-width="140" />
+        <el-table-column show-overflow-tooltip prop="status" label="状态" width="80">
           <template #default="{row}">
             <el-tag :type="row.status===1?'success':'danger'">{{ row.status===1?'启用':'禁用' }}</el-tag>
           </template>
         </el-table-column>
-        <el-table-column prop="createTime" label="创建时间" width="170" />
-        <el-table-column label="操作" width="280" fixed="right">
+        <el-table-column show-overflow-tooltip prop="createTime" label="创建时间" min-width="160" />
+        <el-table-column show-overflow-tooltip label="操作" width="280" fixed="right">
           <template #default="{row}">
             <el-button size="small" @click="openDialog(row)">编辑</el-button>
             <el-button size="small" type="warning" @click="handleResetPwd(row)">重置密码</el-button>

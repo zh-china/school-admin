@@ -21,18 +21,18 @@
         </div>
       </template>
       <el-table :data="tableData" border stripe v-loading="loading" @row-dblclick="openDialog">
-        <el-table-column prop="id" label="ID" width="70" />
-        <el-table-column prop="classCode" label="班级编码" width="150" />
-        <el-table-column prop="className" label="班级名称" min-width="180" />
-        <el-table-column prop="grade" label="年级" width="120" />
-        <el-table-column prop="headTeacher" label="班主任" width="120" />
-        <el-table-column prop="status" label="状态" width="80">
+        <el-table-column show-overflow-tooltip prop="id" label="ID" width="70" />
+        <el-table-column show-overflow-tooltip prop="classCode" label="班级编码" width="150" />
+        <el-table-column show-overflow-tooltip prop="className" label="班级名称" min-width="180" />
+        <el-table-column show-overflow-tooltip prop="grade" label="年级" width="120" />
+        <el-table-column show-overflow-tooltip prop="headTeacher" label="班主任" width="120" />
+        <el-table-column show-overflow-tooltip prop="status" label="状态" width="80">
           <template #default="{row}">
             <el-tag :type="row.status===1?'success':'danger'">{{ row.status===1?'启用':'停用' }}</el-tag>
           </template>
         </el-table-column>
-        <el-table-column prop="description" label="描述" min-width="180" />
-        <el-table-column label="操作" width="160" fixed="right">
+        <el-table-column show-overflow-tooltip prop="description" label="描述" min-width="180" />
+        <el-table-column show-overflow-tooltip label="操作" width="160" fixed="right">
           <template #default="{row}">
             <el-button size="small" @click="openDialog(row)">编辑</el-button>
             <el-button size="small" type="danger" @click="handleDelete(row)">删除</el-button>

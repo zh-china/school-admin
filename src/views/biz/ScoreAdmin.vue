@@ -30,15 +30,15 @@
         </div>
       </template>
       <el-table :data="tableData" border stripe v-loading="loading" @row-dblclick="openDialog">
-        <el-table-column prop="id" label="ID" width="60" />
-        <el-table-column prop="studentName" label="学生" width="100" />
-        <el-table-column prop="subject" label="科目" width="90" />
-        <el-table-column prop="score" label="分数" width="80" />
-        <el-table-column prop="examType" label="考试类型" width="90" />
-        <el-table-column prop="semester" label="学期" width="100" />
-        <el-table-column prop="examDate" label="考试日期" width="120" />
-        <el-table-column prop="remark" label="备注" min-width="150" />
-        <el-table-column label="操作" width="160" fixed="right">
+        <el-table-column show-overflow-tooltip prop="id" label="ID" width="55" />
+        <el-table-column show-overflow-tooltip prop="studentName" label="学生" min-width="80" />
+        <el-table-column show-overflow-tooltip prop="subject" label="科目" width="70" />
+        <el-table-column show-overflow-tooltip prop="score" label="分数" width="70" />
+        <el-table-column show-overflow-tooltip prop="examType" label="类型" width="70" />
+        <el-table-column show-overflow-tooltip prop="semester" label="学期" width="90" />
+        <el-table-column show-overflow-tooltip prop="examDate" label="考试日期" width="110" />
+        <el-table-column show-overflow-tooltip prop="remark" label="备注" min-width="120" />
+        <el-table-column show-overflow-tooltip label="操作" width="150" fixed="right">
           <template #default="{row}">
             <el-button size="small" @click="openDialog(row)">编辑</el-button>
             <el-button size="small" type="danger" @click="handleDelete(row)">删除</el-button>

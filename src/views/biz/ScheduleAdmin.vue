@@ -30,20 +30,20 @@
         </div>
       </template>
       <el-table :data="tableData" border stripe v-loading="loading" @row-dblclick="openDialog">
-        <el-table-column prop="id" label="ID" width="60" />
-        <el-table-column prop="className" label="班级" width="120" />
-        <el-table-column prop="dayOfWeek" label="星期" width="70">
+        <el-table-column show-overflow-tooltip prop="id" label="ID" width="50" />
+        <el-table-column show-overflow-tooltip prop="className" label="班级" min-width="100" />
+        <el-table-column show-overflow-tooltip prop="dayOfWeek" label="星期" width="60">
           <template #default="{row}">{{ weekMap[row.dayOfWeek] }}</template>
         </el-table-column>
-        <el-table-column prop="period" label="节次" width="70" />
-        <el-table-column prop="subject" label="科目" width="100" />
-        <el-table-column prop="teacherName" label="授课老师" width="100" />
-        <el-table-column label="时间" width="160">
+        <el-table-column show-overflow-tooltip prop="period" label="节次" width="55" />
+        <el-table-column show-overflow-tooltip prop="subject" label="科目" width="80" />
+        <el-table-column show-overflow-tooltip prop="teacherName" label="老师" min-width="80" />
+        <el-table-column show-overflow-tooltip label="时间" width="150">
           <template #default="{row}">{{ row.startTime?.substring(0,5) }} - {{ row.endTime?.substring(0,5) }}</template>
         </el-table-column>
-        <el-table-column prop="classroom" label="教室" width="120" />
-        <el-table-column prop="semester" label="学期" width="90" />
-        <el-table-column label="操作" width="160" fixed="right">
+        <el-table-column show-overflow-tooltip prop="classroom" label="教室" min-width="90" />
+        <el-table-column show-overflow-tooltip prop="semester" label="学期" width="85" />
+        <el-table-column show-overflow-tooltip label="操作" width="150" fixed="right">
           <template #default="{row}">
             <el-button size="small" @click="openDialog(row)">编辑</el-button>
             <el-button size="small" type="danger" @click="handleDelete(row)">删除</el-button>

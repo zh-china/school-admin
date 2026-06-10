@@ -26,29 +26,29 @@
         </div>
       </template>
       <el-table :data="tableData" border stripe v-loading="loading" @row-dblclick="openDialog">
-        <el-table-column prop="id" label="ID" width="60" />
-        <el-table-column prop="studentNo" label="学号" width="120" />
-        <el-table-column prop="studentName" label="姓名" width="100" />
-        <el-table-column prop="gender" label="性别" width="70">
+        <el-table-column show-overflow-tooltip prop="id" label="ID" width="50" />
+        <el-table-column show-overflow-tooltip prop="studentNo" label="学号" width="110" />
+        <el-table-column show-overflow-tooltip prop="studentName" label="姓名" min-width="80" />
+        <el-table-column show-overflow-tooltip prop="gender" label="性别" width="60">
           <template #default="{row}">
             {{ row.gender === 1 ? '男' : row.gender === 0 ? '女' : '-' }}
           </template>
         </el-table-column>
-        <el-table-column prop="birthday" label="出生日期" width="120" />
-        <el-table-column prop="phone" label="手机号" width="130" />
-        <el-table-column prop="email" label="邮箱" min-width="180" />
-        <el-table-column prop="classId" label="班级" width="170">
+        <el-table-column show-overflow-tooltip prop="birthday" label="出生日期" width="110" />
+        <el-table-column show-overflow-tooltip prop="phone" label="手机号" width="120" />
+        <el-table-column show-overflow-tooltip prop="email" label="邮箱" min-width="140" />
+        <el-table-column show-overflow-tooltip prop="classId" label="班级" min-width="120">
           <template #default="{row}">
             {{ getClassName(row.classId) }}
           </template>
         </el-table-column>
-        <el-table-column prop="enrollmentDate" label="入学日期" width="120" />
-        <el-table-column prop="status" label="状态" width="80">
+        <el-table-column show-overflow-tooltip prop="enrollmentDate" label="入学日期" width="110" />
+        <el-table-column show-overflow-tooltip prop="status" label="状态" width="75">
           <template #default="{row}">
             <el-tag :type="row.status===1?'success':'danger'">{{ row.status===1?'在读':'休学' }}</el-tag>
           </template>
         </el-table-column>
-        <el-table-column label="操作" width="160" fixed="right">
+        <el-table-column show-overflow-tooltip label="操作" width="150" fixed="right">
           <template #default="{row}">
             <el-button size="small" @click="openDialog(row)">编辑</el-button>
             <el-button size="small" type="danger" @click="handleDelete(row)">删除</el-button>

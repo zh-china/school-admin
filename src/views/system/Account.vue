@@ -23,18 +23,18 @@
         </div>
       </template>
       <el-table :data="tableData" border stripe v-loading="loading" @row-dblclick="openDialog">
-        <el-table-column prop="id" label="ID" width="70" />
-        <el-table-column prop="username" label="账号" width="140" />
-        <el-table-column prop="realName" label="姓名" width="120" />
-        <el-table-column prop="phone" label="手机号" width="140" />
-        <el-table-column prop="email" label="邮箱" min-width="180" />
-        <el-table-column prop="status" label="状态" width="80">
+        <el-table-column show-overflow-tooltip prop="id" label="ID" width="55" />
+        <el-table-column show-overflow-tooltip prop="username" label="账号" min-width="110" />
+        <el-table-column show-overflow-tooltip prop="realName" label="姓名" min-width="80" />
+        <el-table-column show-overflow-tooltip prop="phone" label="手机号" width="130" />
+        <el-table-column show-overflow-tooltip prop="email" label="邮箱" min-width="150" />
+        <el-table-column show-overflow-tooltip prop="status" label="状态" width="75">
           <template #default="{row}">
             <el-tag :type="row.status===1?'success':'danger'">{{ row.status===1?'启用':'禁用' }}</el-tag>
           </template>
         </el-table-column>
-        <el-table-column prop="createTime" label="创建时间" width="170" />
-        <el-table-column label="操作" width="280" fixed="right">
+        <el-table-column show-overflow-tooltip prop="createTime" label="创建时间" width="160" />
+        <el-table-column show-overflow-tooltip label="操作" width="260" fixed="right">
           <template #default="{row}">
             <el-button size="small" @click="openDialog(row)">编辑</el-button>
             <el-button size="small" type="warning" @click="handleResetPwd(row)">重置密码</el-button>

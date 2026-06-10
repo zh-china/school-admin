@@ -9,24 +9,24 @@
       </template>
       <el-table :data="tableData" border stripe row-key="id" v-loading="loading"
         :tree-props="{ children: 'children' }" default-expand-all>
-        <el-table-column prop="menuName" label="名称" width="200" />
-        <el-table-column prop="icon" label="图标" width="100">
+        <el-table-column show-overflow-tooltip prop="menuName" label="名称" width="200" />
+        <el-table-column show-overflow-tooltip prop="icon" label="图标" width="100">
           <template #default="{row}">
             <el-icon v-if="row.icon"><component :is="row.icon" /></el-icon>
           </template>
         </el-table-column>
-        <el-table-column prop="menuType" label="类型" width="80">
+        <el-table-column show-overflow-tooltip prop="menuType" label="类型" width="80">
           <template #default="{row}">
             <el-tag :type="row.menuType===1?'':'success'" size="small">
               {{ row.menuType===1?'目录':row.menuType===2?'菜单':'按钮' }}
             </el-tag>
           </template>
         </el-table-column>
-        <el-table-column prop="path" label="路由路径" width="180" />
-        <el-table-column prop="component" label="组件路径" width="220" />
-        <el-table-column prop="permissionCode" label="权限标识" min-width="180" />
-        <el-table-column prop="sortOrder" label="排序" width="60" />
-        <el-table-column label="操作" width="200" fixed="right">
+        <el-table-column show-overflow-tooltip prop="path" label="路由路径" width="180" />
+        <el-table-column show-overflow-tooltip prop="component" label="组件路径" width="220" />
+        <el-table-column show-overflow-tooltip prop="permissionCode" label="权限标识" min-width="180" />
+        <el-table-column show-overflow-tooltip prop="sortOrder" label="排序" width="60" />
+        <el-table-column show-overflow-tooltip label="操作" width="200" fixed="right">
           <template #default="{row}">
             <el-button size="small" @click="openDialog(row, row.parentId)">添加子级</el-button>
             <el-button size="small" @click="openDialog(row, row.parentId, row)">编辑</el-button>

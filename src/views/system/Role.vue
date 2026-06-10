@@ -8,16 +8,16 @@
         </div>
       </template>
       <el-table :data="tableData" border stripe v-loading="loading" @row-dblclick="openDialog">
-        <el-table-column prop="id" label="ID" width="70" />
-        <el-table-column prop="roleName" label="角色名称" width="160" />
-        <el-table-column prop="roleCode" label="角色编码" width="160" />
-        <el-table-column prop="description" label="描述" min-width="200" />
-        <el-table-column prop="status" label="状态" width="80">
+        <el-table-column show-overflow-tooltip prop="id" label="ID" width="55" />
+        <el-table-column show-overflow-tooltip prop="roleName" label="角色名称" min-width="120" />
+        <el-table-column show-overflow-tooltip prop="roleCode" label="角色编码" min-width="120" />
+        <el-table-column show-overflow-tooltip prop="description" label="描述" min-width="180" />
+        <el-table-column show-overflow-tooltip prop="status" label="状态" width="75">
           <template #default="{row}">
             <el-tag :type="row.status===1?'success':'danger'">{{ row.status===1?'启用':'禁用' }}</el-tag>
           </template>
         </el-table-column>
-        <el-table-column label="操作" width="280" fixed="right">
+        <el-table-column show-overflow-tooltip label="操作" width="290" fixed="right">
           <template #default="{row}">
             <el-button size="small" @click="openDialog(row)">编辑</el-button>
             <el-button size="small" type="warning" @click="openAssignMenu(row)">分配权限</el-button>
