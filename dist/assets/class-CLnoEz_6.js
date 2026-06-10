@@ -1,1 +1,0 @@
-import{y as t}from"./index-Cp9kSgKh.js";function e(s){return t.get("/biz/class/page",{params:s})}function n(){return t.get("/biz/class/list")}function r(s){return t.post("/biz/class",s)}function u(s){return t.put("/biz/class",s)}function i(s){return t.delete(`/biz/class/${s}`)}export{r as a,n as b,i as d,e as g,u};
